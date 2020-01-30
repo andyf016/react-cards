@@ -1,5 +1,6 @@
 {
   "name": "react-cards",
+  "homepage": "https://creativeAndy.gitlab.io/your-project-name",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

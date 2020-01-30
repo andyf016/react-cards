@@ -19,31 +19,25 @@ const CardGroup = (props) => (
 );
 
 const Card = (props) => (
-    <div>TODO: Implement Card Component</div>
+    
+    <div className="card cardGroup__card">
+    <div className="card__description cardGroup__cardDescription">
+        <div className={"icon fa " + props.icon + " card__descriptionIcon"} />
+        <div className="card__descriptionText">
+            {props.description}
+            <br/>
+            {props.hint && "(" + props.hint + ")"}
+        </div>
+    </div>
+<div className="card__price">{props.price}</div>
+</div>
 );
 
 const App = () => (
-    <div className="cardGroup">
-        <div className="card cardGroup__card">
-            <div className="card__description cardGroup__cardDescription">
-                <div className="icon fa fa-thumbs-o-up card__descriptionIcon" />
-                <div className="card__descriptionText">
-                    Trial
-                </div>
-            </div>
-            <div className="card__price">Free!</div>
-        </div>
-        <div className="card cardGroup__card">
-            <div className="card__description cardGroup__cardDescription">
-                <div className="icon fa fa-trophy card__descriptionIcon" />
-                <div className="card__descriptionText">
-                    Basic tier
-                    <br/>
-                    (most popular)
-                </div>
-            </div>
-            <div className="card__price">$10.00</div>
-        </div>
+    <CardGroup>
+        <Card description="Trial" icon="fa-thumbs-o-up" price="Free!" />
+        <Card description="Basic tier" hint = "most popular" icon = "fa-trophy" price = "$10.00" />
+       
         <div className="card cardGroup__card">
             <div className="card__description cardGroup__cardDescription">
                 <div className="icon fa fa-bolt card__descriptionIcon" />
@@ -55,7 +49,7 @@ const App = () => (
             </div>
             <div className="card__price">$6,000.00</div>
         </div>
-    </div>
+    </CardGroup>
 );
 
 export default App;
